@@ -1,0 +1,12 @@
+{
+	"name": "havvtom/validator",
+	"description" : "A php validator",
+	"autoload" : {
+		"psr-4" : {
+			"App\\" : "app"
+		}
+	},
+	"require": {
+		"symfony/var-dumper": "^5.2"
+	}
+}
