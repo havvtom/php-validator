@@ -1,29 +1,21 @@
 <?php
 
-use App\Validation\Rules\EmailRule;
-use App\Validation\Rules\RequiredRule;
 use App\Validation\Validator;
 
 require "vendor/autoload.php";
 
 $validator = new Validator([
-	'name' => '',
-	'email' => ''
+	'name' => 'Tom'	
 ]);
 
 $validator->setRules([
 	"name" => [
-		new RequiredRule(),
-	],
-	"email" => [
-		new RequiredRule(),
-		new EmailRule()
+		'required',
+		'between:5,10'
 	]
 ]);
 
-// $validator->validate();
 
-// dump($validator);
 if(!$validator->validate()) {
 	dump($validator->getErrors());
 } else {
